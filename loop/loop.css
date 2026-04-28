@@ -1,0 +1,16 @@
+body {
+	margin: 0;
+	overflow: hidden;
+	background: #670626;
+	position: relative;
+	height: 100vh;
+  }
+  
+  .dot {
+	position: absolute;
+	font-size: 200px;
+	line-height: 1;
+	transition: all 2s ease;
+	color: #BAD797;
+
+  }

@@ -1,0 +1,26 @@
+body {
+	margin: 0;
+	background-color: #e5dbe6;
+  }
+  
+  .container {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+  }
+  
+  .group {
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+  }
+  
+  .dot {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	position: absolute;
+  }

@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+	background: #f0a7c1;
+	overflow: hidden;
+}
+
+.container {
+	width: 270px;
+	height: 60px;
+	position: absolute;
+	left: 40vw;
+	top: 45vh;
+}
+
+.dot {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: absolute;
+	box-shadow: 6px 6px 9px #ffffff;
+	animation: wiggle 1s infinite alternate;
+}
+
+.dot:nth-child(2) {
+	animation-duration: 1.2s;
+}
+
+.dot:nth-child(3) {
+	animation-duration: 0.6s;
+}
+
+.dot:nth-child(4) {
+	animation-duration: 1.4s;
+}
+
+@keyframes wiggle {
+	from {
+		transform: translateY(40px);
+	}
+	to {
+		transform: translateY(-50px);
+	}
+}
