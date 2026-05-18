@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sparkles</title>
+  <link rel="stylesheet" href="sparkles.css" />
+</head>
+<body>
+  <div id="sparkleContainer"></div>
+
+  <main class="sparkles-layout">
+    <section class="player">
+      <p class="label">Now Playing</p>
+      <h1>SPARKLES</h1>
+
+      <p class="instruction">
+        Drag the words into the sentence box.
+      </p>
+
+      <section class="word-bank" aria-label="Word bank">
+        <span class="draggable-word" draggable="true">softens</span>
+        <span class="draggable-word" draggable="true">the</span>
+        <span class="draggable-word" draggable="true">everything</span>
+        <span class="draggable-word" draggable="true">room</span>
+        <span class="draggable-word" draggable="true">try</span>
+        <span class="draggable-word" draggable="true">me</span>
+        <span class="draggable-word" draggable="true">don't</span>
+        <span class="draggable-word" draggable="true">like</span>
+        <span class="draggable-word" draggable="true">fills</span>
+        <span class="draggable-word" draggable="true">with</span>
+        <span class="draggable-word" draggable="true">I</span>
+        <span class="draggable-word" draggable="true">light</span>
+        <span class="draggable-word" draggable="true">have</span>
+        <span class="draggable-word" draggable="true">to</span>
+        <span class="draggable-word" draggable="true">anymore</span>
+        <span class="draggable-word" draggable="true">and</span>
+        <span class="draggable-word" draggable="true">so</span>
+        <span class="draggable-word" draggable="true">hard</span>
+        <span class="draggable-word" draggable="true">inside</span>
+      </section>
+
+      <section id="sentenceBox" class="sentence-box" aria-label="Sentence box">
+        <p class="placeholder">
+          Drop words here to create a sentence. When it feels right, the music will play!
+        </p>
+      </section>
+
+      <div class="controls">
+        <button id="clearBtn" type="button">Clear</button>
+      </div>
+    </section>
+
+    <aside class="guide-panel" aria-label="Instructions">
+      <p class="label">How to Play</p>
+      <h2>Build the listening sentence</h2>
+
+      <ol class="guide-list">
+        <li>
+          <span class="guide-number">1</span>
+          <span>Start with the first word that feels correct.</span>
+        </li>
+        <li>
+          <span class="guide-number">2</span>
+          <span>Drag one word at a time into the sentence box.</span>
+        </li>
+        <li>
+          <span class="guide-number">3</span>
+          <span>If the word is right, it sparkles and plays a small tone.</span>
+        </li>
+        <li>
+          <span class="guide-number">4</span>
+          <span>Complete the sentence to hear the full music moment.</span>
+        </li>
+      </ol>
+
+      <div class="listening-badge">
+        <span>drag</span>
+        <span>listen</span>
+        <span>play</span>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <script src="sparkles.js"></script>
+</body>
+</html>

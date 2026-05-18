@@ -4,27 +4,6 @@ const topics = document.querySelector(".topics");
 const sparkleContainer = document.getElementById("sparkleContainer");
 const topicItems = document.querySelectorAll(".item");
 
-function createDecorativeLayoutElements() {
-	const sideNote = document.createElement("div");
-	sideNote.classList.add("side-note");
-	sideNote.innerHTML = `
-		<span>1. Follow the sentence</span>
-		<span>2. One word at a time</span>
-		<span>3. Music plays when it is correct!</span>
-	`;
-
-	const sideCircle = document.createElement("div");
-	sideCircle.classList.add("side-circle");
-	sideCircle.innerHTML = `
-		<span>drag</span>
-		<span>listen</span>
-		<span>play</span>
-	`;
-
-	document.body.appendChild(sideNote);
-	document.body.appendChild(sideCircle);
-}
-
 function createBackgroundSparkles() {
 	for (let i = 0; i < 120; i++) {
 		const sparkle = document.createElement("span");
@@ -74,7 +53,6 @@ function createSparklesAroundElement(element) {
 	}
 }
 
-createDecorativeLayoutElements();
 createBackgroundSparkles();
 
 introPopup.addEventListener("click", () => {
