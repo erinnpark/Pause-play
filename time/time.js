@@ -8,29 +8,6 @@ let draggedWord = null;
 let sentenceWords = [];
 let hasPlayedCompletionMusic = false;
 
-function createDecorativeLayoutElements() {
-  const sideNote = document.createElement("div");
-  sideNote.classList.add("side-note");
-  sideNote.innerHTML = `
-    <span>1. Follow the sentence</span>
-    <span>2. One word at a time</span>
-    <span>3. Music plays when it is correct!</span>
-  `;
-
-  const sideCircle = document.createElement("div");
-  sideCircle.classList.add("side-circle");
-  sideCircle.innerHTML = `
-    <span>drag</span>
-    <span>listen</span>
-    <span>play</span>
-  `;
-
-  document.body.appendChild(sideNote);
-  document.body.appendChild(sideCircle);
-}
-
-createDecorativeLayoutElements();
-
 const correctSentence = [
   "You",
   "are",
@@ -295,7 +272,7 @@ clearBtn.addEventListener("click", async () => {
   updateSentenceBoxSize();
 
   placeholder.textContent =
-    "Drop words here to create a sentence... When it feels right, the music will play!";
+    "Drop words here to create a sentence... When it is right, music will play!";
   placeholder.style.display = "block";
 
   sparkleSynth.triggerAttackRelease("C4", "8n");

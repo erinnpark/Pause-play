@@ -154,28 +154,43 @@ body::after {
   height: 5px;
 }
 
-.player {
-  width: 610px;
-  min-height: 640px;
+.time-stage {
+  width: min(1040px, calc(100vw - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 650px 280px;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+}
+
+.player,
+.hint-panel {
   border: 10px solid #004953;
   border-radius: 6px;
-  padding: 42px;
-  text-align: center;
   background: rgba(255, 255, 255, 0.36);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   box-shadow:
     0 30px 80px rgba(80, 70, 120, 0.18),
     inset 0 0 40px rgba(255, 255, 255, 0.35);
-  position: absolute;
-  left: 7vw;
-  top: 8vh;
-  z-index: 4;
+  position: relative;
+}
+
+.player {
+  width: 100%;
+  min-height: 640px;
+  padding: 42px;
+  text-align: center;
   transform: rotate(-2deg);
   animation: playerSlideIn 1.4s ease forwards, playerFloat 5s ease-in-out infinite alternate;
 }
 
-.player::before {
+.player::before,
+.hint-panel::before {
   content: "";
   position: absolute;
   inset: 18px -28px -22px 22px;
@@ -187,6 +202,18 @@ body::after {
 
 .player::after {
   display: none;
+}
+
+.hint-panel {
+  padding: 28px;
+  color: #004953;
+  transform: rotate(2deg);
+  animation: hintSlideIn 1.4s ease forwards, hintFloat 5.5s ease-in-out infinite alternate;
+}
+
+.hint-panel::before {
+  inset: -18px 18px 18px -22px;
+  transform: rotate(-4deg);
 }
 
 .label {
@@ -205,6 +232,47 @@ h1 {
   margin-bottom: 10px;
   color: #004953;
   line-height: 1.05;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.hint-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 8px;
+}
+
+.hint-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.hint-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 12px;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+}
+
+.hint-list li::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  background: #004953;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  box-shadow: 0 0 12px rgba(0, 73, 83, 0.35);
 }
 
 .instruction {
@@ -436,63 +504,6 @@ button:hover {
     0 14px 28px rgba(0, 73, 83, 0.14);
 }
 
-body .side-note {
-  position: fixed;
-  right: 7vw;
-  top: 20vh;
-  width: 260px;
-  z-index: 2;
-  color: #004953;
-  font-size: 12px;
-  line-height: 1.7;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.7;
-  transform: rotate(5deg);
-  pointer-events: none;
-}
-
-body .side-note span {
-  display: block;
-  margin-bottom: 14px;
-}
-
-body .side-circle {
-  position: fixed;
-  right: 10vw;
-  bottom: 13vh;
-  width: 210px;
-  height: 210px;
-  border: 4px dotted #004953;
-  border-radius: 50%;
-  z-index: 1;
-  animation: slowSpin 18s linear infinite;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8px;
-  color: #004953;
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-body .side-circle::before {
-  content: "";
-  position: absolute;
-  inset: 35px;
-  border: 3px dotted #004953;
-  border-radius: 50%;
-}
-
-body .side-circle span {
-  position: relative;
-  z-index: 2;
-  display: block;
-}
-
 @keyframes playerSlideIn {
   from {
     opacity: 0;
@@ -505,6 +516,18 @@ body .side-circle span {
   }
 }
 
+@keyframes hintSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotate(6deg) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(2deg) scale(1);
+  }
+}
+
 @keyframes playerFloat {
   from {
     margin-top: 0;
@@ -512,6 +535,16 @@ body .side-circle span {
 
   to {
     margin-top: 12px;
+  }
+}
+
+@keyframes hintFloat {
+  from {
+    margin-top: 14px;
+  }
+
+  to {
+    margin-top: 0;
   }
 }
 
@@ -611,25 +644,29 @@ body .side-circle span {
     overflow-y: auto;
   }
 
-  .player {
-    position: relative;
-    left: auto;
-    top: auto;
+  .time-stage {
     width: calc(100vw - 32px);
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 0;
+  }
+
+  .player {
     min-height: auto;
-    margin: 40px auto;
+  }
+
+  .player,
+  .hint-panel {
     transform: rotate(0deg);
     animation: playerSlideInMobile 1.2s ease forwards;
   }
 
-  .player::after,
-  .side-note,
-  .side-circle {
-    display: none;
-  }
-
   h1 {
     font-size: 38px;
+  }
+
+  h2 {
+    font-size: 22px;
   }
 }
 

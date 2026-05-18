@@ -23,44 +23,59 @@
 
   <div id="sparkleContainer"></div>
 
-  <main class="player">
-    <p class="label">Now Playing</p>
-    <h1>BABY by Justin Bieber</h1>
+  <div class="time-stage">
+    <main class="player">
+      <p class="label">Now Playing</p>
+      <h1>BABY by Justin Bieber</h1>
 
-    <p class="instruction">
-      Drag the words into the sentence box.
-    </p>
-
-    <section class="word-bank">
-      <span class="draggable-word" draggable="true">ever</span>
-      <span class="draggable-word" draggable="true">my</span>
-      <span class="draggable-word" draggable="true">You</span>
-      <span class="draggable-word" draggable="true">apart</span>
-      <span class="draggable-word" draggable="true">are</span>
-      <span class="draggable-word" draggable="true">love</span>
-      <span class="draggable-word" draggable="true">never</span>
-      <span class="draggable-word" draggable="true">we</span>
-      <span class="draggable-word" draggable="true">heart</span>
-      <span class="draggable-word" draggable="true">ever</span>
-      <span class="draggable-word" draggable="true">you</span>
-      <span class="draggable-word" draggable="true">be</span>
-      <span class="draggable-word" draggable="true">and</span>
-      <span class="draggable-word" draggable="true">will</span>
-      <span class="draggable-word" draggable="true">my</span>
-      <span class="draggable-word" draggable="true">are</span>
-      <span class="draggable-word" draggable="true">ever</span>
-    </section>
-
-    <section id="sentenceBox" class="sentence-box">
-      <p class="placeholder">
-        Drop words here to create a sentence... When it feels right, the music will play!
+      <p class="instruction">
+        Drag the words into the sentence box.
       </p>
-    </section>
 
-    <div class="controls">
-      <button id="clearBtn" type="button">Clear</button>
-    </div>
-  </main>
+      <section class="word-bank">
+        <span class="draggable-word" draggable="true">ever</span>
+        <span class="draggable-word" draggable="true">my</span>
+        <span class="draggable-word" draggable="true">You</span>
+        <span class="draggable-word" draggable="true">apart</span>
+        <span class="draggable-word" draggable="true">are</span>
+        <span class="draggable-word" draggable="true">love</span>
+        <span class="draggable-word" draggable="true">never</span>
+        <span class="draggable-word" draggable="true">we</span>
+        <span class="draggable-word" draggable="true">heart</span>
+        <span class="draggable-word" draggable="true">ever</span>
+        <span class="draggable-word" draggable="true">you</span>
+        <span class="draggable-word" draggable="true">be</span>
+        <span class="draggable-word" draggable="true">and</span>
+        <span class="draggable-word" draggable="true">will</span>
+        <span class="draggable-word" draggable="true">my</span>
+        <span class="draggable-word" draggable="true">are</span>
+        <span class="draggable-word" draggable="true">ever</span>
+      </section>
+
+      <section id="sentenceBox" class="sentence-box">
+        <p class="placeholder">
+          Drop words here to create a sentence... When it is right, music will play!
+        </p>
+      </section>
+
+      <div class="controls">
+        <button id="clearBtn" type="button">Clear</button>
+      </div>
+    </main>
+
+    <aside class="hint-panel" aria-label="Hints">
+      <p class="hint-label">Hints</p>
+      <h2>Listen for the pattern</h2>
+
+      <ul class="hint-list">
+        <li>This sentence is about love and staying together.</li>
+        <li>Start with “You are…”</li>
+        <li>Two phrases repeat the same beginning: “you are my…”</li>
+        <li>The ending uses repetition: “ever ever ever”</li>
+        <li>The last word is “apart.”</li>
+      </ul>
+    </aside>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
   <script src="time.js"></script>
