@@ -475,7 +475,8 @@ h2 {
   z-index: 5;
 }
 
-button {
+button,
+.back-button {
   border: none;
   background: rgba(255, 255, 255, 0.72);
   color: #00416a;
@@ -493,9 +494,11 @@ button {
   box-shadow:
     0 0 12px rgba(0, 65, 106, 0.12),
     0 10px 22px rgba(0, 65, 106, 0.08);
+  text-decoration: none;
 }
 
-button:hover {
+button:hover,
+.back-button:hover {
   background: rgba(255, 255, 255, 0.9);
   color: #00416a;
   transform: translateY(-8px) scale(1.1) rotate(0deg);
