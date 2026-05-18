@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Randomness</title>
-  <link rel="stylesheet" href="time.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BABY by Justin Bieber</title>
+  <link rel="stylesheet" href="time.css" />
 </head>
+
 <body>
-  <div class="container"></div>
+  <div class="dream-bg">
+    <span class="sunbeam sunbeam-one"></span>
+    <span class="sunbeam sunbeam-two"></span>
+
+    <span class="cloud cloud-one"></span>
+    <span class="cloud cloud-two"></span>
+    <span class="cloud cloud-three"></span>
+
+    <span class="orb orb-one"></span>
+    <span class="orb orb-two"></span>
+    <span class="orb orb-three"></span>
+  </div>
+
+  <div id="sparkleContainer"></div>
+
+  <main class="player">
+    <p class="label">Now Playing</p>
+    <h1>BABY by Justin Bieber</h1>
+
+    <p class="instruction">
+      Drag the words into the sentence box.
+    </p>
+
+    <section class="word-bank">
+      <span class="draggable-word" draggable="true">ever</span>
+      <span class="draggable-word" draggable="true">my</span>
+      <span class="draggable-word" draggable="true">You</span>
+      <span class="draggable-word" draggable="true">apart</span>
+      <span class="draggable-word" draggable="true">are</span>
+      <span class="draggable-word" draggable="true">love</span>
+      <span class="draggable-word" draggable="true">never</span>
+      <span class="draggable-word" draggable="true">we</span>
+      <span class="draggable-word" draggable="true">heart</span>
+      <span class="draggable-word" draggable="true">ever</span>
+      <span class="draggable-word" draggable="true">you</span>
+      <span class="draggable-word" draggable="true">be</span>
+      <span class="draggable-word" draggable="true">and</span>
+      <span class="draggable-word" draggable="true">will</span>
+      <span class="draggable-word" draggable="true">my</span>
+      <span class="draggable-word" draggable="true">are</span>
+      <span class="draggable-word" draggable="true">ever</span>
+    </section>
+
+    <section id="sentenceBox" class="sentence-box">
+      <p class="placeholder">
+        Drop words here to create a sentence... When it feels right, the music will play!
+      </p>
+    </section>
+
+    <div class="controls">
+      <button id="clearBtn" type="button">Clear</button>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
   <script src="time.js"></script>
 </body>
 </html>
