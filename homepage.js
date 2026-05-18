@@ -7,3 +7,12 @@ function changeLinkSizes() {
 }
 
 setInterval(changeLinkSizes, 1000);
+
+let introPopup = document.querySelector('#intro-popup');
+let introOverlay = document.querySelector('#intro-overlay');
+let topics = document.querySelector('.topics');
+
+introPopup.addEventListener('click', () => {
+	introOverlay.classList.add('hidden');
+	topics.classList.add('visible');
+});
