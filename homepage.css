@@ -272,9 +272,10 @@ h2 {
 }
 
 .word-bank {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 16px;
+	display: grid;
+	grid-template-columns: repeat(2, max-content);
+	column-gap: 22px;
+	row-gap: 18px;
 	justify-content: center;
 	margin-bottom: 8px;
 	transform: rotate(1deg);
