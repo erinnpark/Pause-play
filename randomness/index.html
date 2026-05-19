@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Small Sites; Big Stories | Randomness</title>
-  <link rel="stylesheet" href="randomness.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PAYPHONE by Maroon 5</title>
+  <link rel="stylesheet" href="randomness.css" />
 </head>
-<body>
-  <div class="container"></div>
 
+<body>
+  <div class="dream-bg">
+    <span class="sunbeam sunbeam-one"></span>
+    <span class="sunbeam sunbeam-two"></span>
+
+    <span class="cloud cloud-one"></span>
+    <span class="cloud cloud-two"></span>
+    <span class="cloud cloud-three"></span>
+
+    <span class="orb orb-one"></span>
+    <span class="orb orb-two"></span>
+    <span class="orb orb-three"></span>
+  </div>
+
+  <div id="sparkleContainer"></div>
+
+  <div class="time-stage">
+    <main class="player">
+      <p class="label">Now Playing</p>
+      <h1>PAYPHONE by Maroon 5</h1>
+
+      <p class="instruction">
+        Drag the words into the sentence box.
+      </p>
+
+      <section class="word-bank">
+        <span class="draggable-word" draggable="true">home</span>
+        <span class="draggable-word" draggable="true">trying</span>
+        <span class="draggable-word" draggable="true">I'm</span>
+        <span class="draggable-word" draggable="true">call</span>
+        <span class="draggable-word" draggable="true">payphone</span>
+        <span class="draggable-word" draggable="true">a</span>
+        <span class="draggable-word" draggable="true">at</span>
+        <span class="draggable-word" draggable="true">to</span>
+      </section>
+
+      <section id="sentenceBox" class="sentence-box">
+        <p class="placeholder">
+          Drop words here to create a sentence... When it is right, music will play!
+        </p>
+      </section>
+
+      <div class="controls">
+        <button id="clearBtn" type="button">Clear</button>
+        <a href="../index.html" class="back-button">Go back</a>
+      </div>
+    </main>
+
+    <aside class="hint-panel" aria-label="Hints">
+      <p class="hint-label">Hints</p>
+      <h2>Start Here:</h2>
+
+      <ul class="hint-list">
+        <li>The sentence begins with "I'm at..."</li>
+        <li>The action word is “trying.”</li>
+        <li>The sentence ends with “call home.”</li>
+      </ul>
+    </aside>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
   <script src="randomness.js"></script>
 </body>
 </html>
