@@ -24,10 +24,10 @@ const powerSynth = new Tone.PolySynth(Tone.Synth, {
     type: "sine"
   },
   envelope: {
-    attack: 0.4,
-    decay: 0.6,
-    sustain: 0.65,
-    release: 3.2
+    attack: 0.7,
+    decay: 0.8,
+    sustain: 0.55,
+    release: 4.5
   }
 }).toDestination();
 
@@ -36,10 +36,10 @@ const bassSynth = new Tone.Synth({
     type: "sine"
   },
   envelope: {
-    attack: 0.3,
-    decay: 0.5,
-    sustain: 0.5,
-    release: 2.8
+    attack: 0.5,
+    decay: 0.7,
+    sustain: 0.4,
+    release: 3.8
   }
 }).toDestination();
 
@@ -67,8 +67,8 @@ const wrongSynth = new Tone.Synth({
   }
 }).toDestination();
 
-powerSynth.volume.value = -10;
-bassSynth.volume.value = -13;
+powerSynth.volume.value = -16;
+bassSynth.volume.value = -18;
 sparkleSynth.volume.value = -16;
 wrongSynth.volume.value = -18;
 
@@ -154,20 +154,20 @@ async function playCompletionMusic() {
 
   const now = Tone.now();
 
-  bassSynth.triggerAttackRelease("A1", "1n", now);
-  powerSynth.triggerAttackRelease(["A3", "C4", "E4", "B4"], "1n", now);
+  bassSynth.triggerAttackRelease("A1", "2n", now);
+  powerSynth.triggerAttackRelease(["A3", "C4", "E4"], "2n", now);
 
-  bassSynth.triggerAttackRelease("F1", "1n", now + 0.8);
-  powerSynth.triggerAttackRelease(["F3", "A3", "C4", "E4"], "1n", now + 0.8);
+  bassSynth.triggerAttackRelease("F1", "2n", now + 1.2);
+  powerSynth.triggerAttackRelease(["F3", "A3", "C4"], "2n", now + 1.2);
 
-  bassSynth.triggerAttackRelease("C2", "1n", now + 1.6);
-  powerSynth.triggerAttackRelease(["C4", "E4", "G4", "D5"], "1n", now + 1.6);
+  bassSynth.triggerAttackRelease("D2", "2n", now + 2.4);
+  powerSynth.triggerAttackRelease(["D3", "F3", "A3"], "2n", now + 2.4);
 
-  bassSynth.triggerAttackRelease("E1", "1n", now + 2.4);
-  powerSynth.triggerAttackRelease(["E3", "G3", "B3", "D4"], "1n", now + 2.4);
+  bassSynth.triggerAttackRelease("E1", "2n", now + 3.6);
+  powerSynth.triggerAttackRelease(["E3", "G3", "B3"], "2n", now + 3.6);
 
-  bassSynth.triggerAttackRelease("A1", "2n", now + 3.2);
-  powerSynth.triggerAttackRelease(["A3", "C4", "E4", "A4"], "2n", now + 3.2);
+  bassSynth.triggerAttackRelease("A1", "1n", now + 4.8);
+  powerSynth.triggerAttackRelease(["A3", "C4"], "1n", now + 4.8);
 
   createBigSparkleMoment();
 }
